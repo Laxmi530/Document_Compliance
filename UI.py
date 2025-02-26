@@ -1,5 +1,5 @@
 import streamlit as st, requests, os
-from Config_Data import load_config_data
+# from Config_Data import load_config_data
 from dotenv import load_dotenv
 load_dotenv()
 COMPLIANCE_CHECK_API = os.getenv("COMPLIANCE_CHECK_API")

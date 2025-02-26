@@ -11,7 +11,7 @@ from autogen_agentchat.teams import RoundRobinGroupChat
 
 from File_Operations import raw_text_from_file, write_point_to_docx, write_point_to_pdf
 from Prompt import COMPLIANCE_CHECK_PROMPT, CORRECTION_PROMPT, WRITER_PROMPT
-from Config_Data import load_config_data
+# from Config_Data import load_config_data
 
 # groq_api_key = load_config_data["GROQ_API_KEY"]
 # groq_model = load_config_data["GROQ_llama_3_3_70B_VERSATILE"]

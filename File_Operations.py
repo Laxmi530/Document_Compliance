@@ -14,7 +14,7 @@ from typing import Dict, List, Union
 import pypdf, pdfplumber, os
 from pathlib import Path
 
-from Config_Data import load_config_data
+# from Config_Data import load_config_data
 
 saved_dir = Path(os.getenv("FILE_PROCESSING_PATH"))
 os.makedirs(saved_dir, exist_ok=True)
