@@ -11,3 +11,4 @@ python-dotenv
 autogen_ext
 tiktoken
 openai
+python-multipart
