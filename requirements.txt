@@ -2,7 +2,6 @@ fastapi
 uvicorn
 aiofiles
 autogen_agentchat
-yaml
 pdfplumber
 python-docx
 pypdf
