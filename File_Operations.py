@@ -11,7 +11,9 @@ from pdfminer.pdfpage import PDFPage
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 from typing import Dict, List, Union
-import pypdf, pdfplumber, os
+import pypdf
+import pdfplumber
+import os
 from pathlib import Path
 
 # from Config_Data import load_config_data
