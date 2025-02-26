@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+aiofiles
+autogen_agentchat
+yaml
+pdfplumber
+pdfminer.six
+python-docx
+pypdf
+streamlit
+reportlab
