@@ -10,3 +10,4 @@ reportlab
 python-dotenv
 autogen_ext
 tiktoken
+openai
