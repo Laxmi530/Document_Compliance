@@ -1,5 +1,7 @@
 import os, shutil, uuid, uvicorn
 from pathlib import Path
+from dotenv import load_dotenv
+load_dotenv()
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from autogen_agentchat.agents import AssistantAgent
@@ -11,11 +13,18 @@ from File_Operations import raw_text_from_file, write_point_to_docx, write_point
 from Prompt import COMPLIANCE_CHECK_PROMPT, CORRECTION_PROMPT, WRITER_PROMPT
 from Config_Data import load_config_data
 
-groq_api_key = load_config_data["GROQ_API_KEY"]
-groq_model = load_config_data["GROQ_llama_3_3_70B_VERSATILE"]
-groq_model_1 = load_config_data["GROQ_llama_3_3_70B_SPECTEC"]
-groq_base_url = load_config_data["GROQ_BASE_URL"]
-UPLOAD_DIR = Path(load_config_data["FILE_PROCESSING_PATH"])
+# groq_api_key = load_config_data["GROQ_API_KEY"]
+# groq_model = load_config_data["GROQ_llama_3_3_70B_VERSATILE"]
+# groq_model_1 = load_config_data["GROQ_llama_3_3_70B_SPECTEC"]
+# groq_base_url = load_config_data["GROQ_BASE_URL"]
+# UPLOAD_DIR = Path(load_config_data["FILE_PROCESSING_PATH"])
+groq_api_key = os.getenv("GROQ_API_KEY")
+groq_model = os.getenv("GROQ_llama_3_3_70B_VERSATILE")
+groq_model_1 = os.getenv("GROQ_llama_3_3_70B_SPECTEC")
+groq_base_url = os.getenv("GROQ_BASE_URL")
+UPLOAD_DIR = Path(os.getenv("FILE_PROCESSING_PATH"))
+
+
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 site = FastAPI(title="Document Compliance API")

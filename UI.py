@@ -1,8 +1,9 @@
 import streamlit as st, requests, os
 from Config_Data import load_config_data
-
-COMPLIANCE_CHECK_API = load_config_data["COMPLIANCE_CHECK_API"]
-UPDATED_DOCUMENT_API = load_config_data["UPDATED_DOCUMENT_API"]
+from dotenv import load_dotenv
+load_dotenv()
+COMPLIANCE_CHECK_API = os.getenv("COMPLIANCE_CHECK_API")
+UPDATED_DOCUMENT_API = os.getenv("UPDATED_DOCUMENT_API")
 
 st.title("📄 Document Compliance Checker")
 
