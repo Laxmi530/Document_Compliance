@@ -27,7 +27,7 @@ UPLOAD_DIR = Path(os.getenv("FILE_PROCESSING_PATH"))
 
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
-site = FastAPI(title="Document Compliance API")
+app = FastAPI(title="Document Compliance API")
 
 ALLOWED_EXTENSIONS = {"pdf", "docx"}
 
@@ -76,7 +76,7 @@ async def correct_writer(text:str):
     stream = group_chat.run(task=text)
     return await stream
 
-@site.post("/compliance_check", summary="Upload and assess document compliance")
+@app.post("/compliance_check", summary="Upload and assess document compliance")
 async def check_compliance(file: UploadFile = File(...)):
     try:
         file_extension = file.filename.split(".")[-1].lower()
@@ -98,7 +98,7 @@ async def check_compliance(file: UploadFile = File(...)):
     finally:
         os.remove(file_path)
 
-@site.post("/updated_document_compliance", summary="Upload and assess document compliance and correct it")
+@app.post("/updated_document_compliance", summary="Upload and assess document compliance and correct it")
 async def process_document(file: UploadFile = File(...)):
     try:
         file_extension = file.filename.split(".")[-1].lower()
@@ -123,4 +123,4 @@ async def process_document(file: UploadFile = File(...)):
         os.remove(file_path)
 
 if __name__ == "__main__":
-    uvicorn.run(site, port=8888)
+    uvicorn.run(app, port=8888)
