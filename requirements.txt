@@ -8,3 +8,4 @@ pypdf
 streamlit
 reportlab
 python-dotenv
+autogen_ext
