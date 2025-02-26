@@ -19,7 +19,7 @@ if uploaded_file:
     if status_col1.button("Check Compliance Status"):
         with st.spinner("Checking compliance..."):
             files = {"file": uploaded_file.getvalue()}
-            response = requests.post(COMPLIANCE_CHECK_API, files={"file": uploaded_file})
+            response = requests.post(COMPLIANCE_CHECK_API, files={"file": uploaded_file}, timeout=20)
             
             if response.status_code == 200:
                 compliance_status = response.json().get("compliance_status", "No status returned")
@@ -30,7 +30,7 @@ if uploaded_file:
     if update_col2.button("Update Document"):
         with st.spinner("Updating document..."):
             files = {"file": uploaded_file.getvalue()}
-            response = requests.post(UPDATED_DOCUMENT_API, files={"file": uploaded_file})
+            response = requests.post(UPDATED_DOCUMENT_API, files={"file": uploaded_file}, timeout=20)
 
             if response.status_code == 200:
                 processed_filename = f"Processed_{uploaded_file.name}"
