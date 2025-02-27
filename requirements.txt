@@ -12,3 +12,4 @@ autogen_ext
 tiktoken
 openai
 python-multipart
+PyYAML
