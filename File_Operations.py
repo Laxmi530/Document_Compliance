@@ -171,7 +171,7 @@ def write_point_to_pdf(data: Dict[str, List[str]], filename: str = "Output.pdf")
     """
     complete_file_path = f"{saved_dir}\\{filename}" 
     c = canvas.Canvas(complete_file_path, pagesize=letter)
-    width, height = letter
+    _, height = letter
     y_position = height - 50
     for title, points in data.items():
         c.setFont("Helvetica-Bold", 14)
