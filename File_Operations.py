@@ -1,10 +1,10 @@
 from __future__ import absolute_import, division, print_function, unicode_literals
-from docx import Document
 from docx.document import Document as _Document
 from docx.oxml.text.paragraph import CT_P
 from docx.oxml.table import CT_Tbl
 from docx.table import _Cell, Table
 from docx.text.paragraph import Paragraph
+from docx import Document
 from pdfminer.pdfpage import PDFPage
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
@@ -19,7 +19,7 @@ from pathlib import Path
 from Config_Data import load_config_data
 
 # saved_dir = Path(os.getenv("FILE_PROCESSING_PATH"))
-saved_dir = load_config_data["FILE_PROCESSING_PATH"]
+saved_dir = Path(load_config_data["FILE_PROCESSING_PATH"])
 
 os.makedirs(saved_dir, exist_ok=True)
 
