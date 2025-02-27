@@ -1,7 +1,7 @@
 from __future__ import absolute_import, division, print_function, unicode_literals
 from docx import Document
-from dotenv import load_dotenv
-load_dotenv()
+# from dotenv import load_dotenv
+# load_dotenv()
 from docx.document import Document as _Document
 from docx.oxml.text.paragraph import CT_P
 from docx.oxml.table import CT_Tbl
@@ -16,9 +16,11 @@ import pdfplumber
 import os
 from pathlib import Path
 
-# from Config_Data import load_config_data
+from Config_Data import load_config_data
 
-saved_dir = Path(os.getenv("FILE_PROCESSING_PATH"))
+# saved_dir = Path(os.getenv("FILE_PROCESSING_PATH"))
+saved_dir = load_config_data["FILE_PROCESSING_PATH"]
+
 os.makedirs(saved_dir, exist_ok=True)
 
 def iter_block_item(parent):
