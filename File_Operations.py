@@ -1,7 +1,5 @@
 from __future__ import absolute_import, division, print_function, unicode_literals
 from docx import Document
-# from dotenv import load_dotenv
-# load_dotenv()
 from docx.document import Document as _Document
 from docx.oxml.text.paragraph import CT_P
 from docx.oxml.table import CT_Tbl
@@ -15,6 +13,8 @@ import pypdf
 import pdfplumber
 import os
 from pathlib import Path
+# from dotenv import load_dotenv
+# load_dotenv()
 
 from Config_Data import load_config_data
 
