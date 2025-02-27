@@ -1,4 +1,5 @@
-import os, yaml
+import os
+import yaml
 from pathlib import Path
 
 def load_config_details(file):
