@@ -109,7 +109,7 @@ async def process_document(file: UploadFile = File(...)):
         raw_text = await raw_text_from_file(file_path)
         compliance_status = await compliance_check(raw_text)
         input_text = f"compliance status: {compliance_status}\nfile name: Processed_{file.filename}\ntext: {raw_text}"
-        _final_output = await correct_writer(input_text)
+        _ = await correct_writer(input_text)
         processed_file_path = f"{UPLOAD_DIR}\\Processed_{file.filename}"
         return FileResponse(processed_file_path, filename=f"Processed_{file.filename}")
     except Exception as err:
