@@ -11,6 +11,8 @@ from Config_Data import load_config_data
 COMPLIANCE_CHECK_API = load_config_data["COMPLIANCE_CHECK_API"]
 UPDATED_DOCUMENT_API = load_config_data["UPDATED_DOCUMENT_API"]
 
+st.set_page_config(page_title="Document Compliance", page_icon="📄")
+
 st.title("📄 Document Compliance Checker")
 
 uploaded_file = st.file_uploader("Upload a PDF or DOCX file", type=["pdf", "docx"])
